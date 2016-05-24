@@ -37,47 +37,28 @@
 </head>
 
 <body>
+  <!-- Site navigation list -->
+  <nav>
+    <h1> {{ AUTHOR }}</h1>
+    <ul class="nav__list">
+      {% for title, link in MENUITEMS %}
+        <li><a class="nav__link" href="{{ link }}">{{ title }}</a></li>
+      {% endfor %}
+
+      {% if DISPLAY_PAGES_ON_MENU and PAGES %}
+      {% for p in pages %}
+        <li><a class="nav__link" href="{{ SITEURL }}/{{ p.url }}">{{ p.title }}</a></li>
+      {% endfor %}
+      {% endif %}
+    </ul>
+  </nav>
   <!-- Sidebar -->
   <aside>
-    <!--<center><a href="{{ SITEURL }}"><img id="avatar" src="{{ AVATAR }}"></a></center>-->
-    <h1>{{ SITENAME }}</h1>
+    <img id="avatar" src="img/{{ AVATAR }}"></a>
     {% if SIDEBAR_DIGEST %}
       <p>{{ SIDEBAR_DIGEST }}</p>
     {% endif %}
     <br>
-
-    {% if TWITTER_USERNAME %}
-      <a class="twitter-follow-button"
-      href="https://twitter.com/{{ TWITTER_USERNAME }}"
-      data-show-count="false"
-      data-lang="en">
-      Follow @twitterdev
-      </a>
-      <script type="text/javascript">
-      window.twttr = (function (d, s, id) {
-        var t, js, fjs = d.getElementsByTagName(s)[0];
-        if (d.getElementById(id)) return;
-        js = d.createElement(s); js.id = id;
-        js.src= "https://platform.twitter.com/widgets.js";
-        fjs.parentNode.insertBefore(js, fjs);
-        return window.twttr || (t = { _e: [], ready: function (f) { t._e.push(f) } });
-      }(document, "script", "twitter-wjs"));
-      </script>
-    {% endif %}
-
-    <nav class="nav">
-      <ul class="list-bare">
-      
-        {% for title, link in MENUITEMS %}
-          <li><a class="nav__link" href="{{ link }}">{{ title }}</a></li>
-        {% endfor %}
-         
-        {% if DISPLAY_PAGES_ON_MENU and PAGES %}{% for p in pages %}
-          <li><a class="nav__link" href="{{ SITEURL }}/{{ p.url }}">{{ p.title }}</a></li>
-        {% endfor %}{% endif %}
-         
-      </ul>
-    </nav>
 
     <p class="social">
       {% if SOCIAL %}
@@ -102,25 +83,23 @@
       {% for cat, null in categories %}
       <li{% if cat == category %} class="active"{% endif %}><a href="{{ SITEURL }}/{{ cat.url }}">{{ cat }}</a></li>
       {% endfor %}
-    </ul> 
+    </ul>
     {% endif %}
     -->
   </aside>
 
   <!-- Content -->
-  <article>
-    {% block content %}
-    {% endblock %}
-  </article>
+  <div id = "content">
+    <!-- Footer -->
+    <footer>
+      <p>
+        Powered by <a href="http://getpelican.com/">Pelican</a>,
+        which takes great advantage of <a href="http://python.org">Python</a>.
+        Theme <a href="https://github.com/wjhopper/academia-red">academia-red</a> by <a href="http://hopperlab.com/">Will Hopper</a>.
+      </p>
+    </footer>
+  </div>
 
-  <!-- Footer -->
-  <footer>
-    <p>
-      Blog powered by <a href="http://getpelican.com/">Pelican</a>, 
-      which takes great advantage of <a href="http://python.org">Python</a>.
-      Theme <a href="https://github.com/parbhat/pelican-blue">Pelican-Blue</a> by <a href="https://parbhatpuri.com/">@parbhat</a>.
-    </p>
-  </footer>
 
   {% if GOOGLE_ANALYTICS %}
   <!-- Analytics -->

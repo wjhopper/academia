@@ -60,8 +60,14 @@ h1 {
 }
 
 h2 {
+  font-size: 26px;
+  margin-top: 0 !important;
   text-align: center;
-  font-size: 40px;
+  border-bottom: black 1px solid;
+}
+
+h3 {
+  font-size: 20
 }
 
 nav {
@@ -108,6 +114,34 @@ nav a:hover {
   margin-top: 70px;
 }
 
+#content > * {
+  margin: .75em auto;;
+}
+
+#content h3 {
+  text-decoration: underline;
+  font-size: 20px;
+
+}
+
+#content h4, #content p {
+  padding-left: 20px;
+}
+
+#content h4 {
+  font-size: 18px;
+}
+
+#content li {
+  display: inline-block;
+  padding: 0 10px;
+  border-left: 1px solid #000;
+}
+
+#content ul li:first-child {
+    border-left: none;
+    padding-left: 0;
+}
 /* Applies to code blocks */
 .highlight pre {
   font-size: 14px;

@@ -33,7 +33,11 @@ body {
 
 footer, #content {
   margin-left: 20%;
-  padding: 30px 5% 0;
+  margin-right: 5%;
+}
+
+footer {
+  padding: 0 5%;
 }
 
 footer > p {
@@ -111,6 +115,7 @@ nav a:hover {
 
 #content {
   margin-top: 70px;
+  padding: 30px 10%;
 }
 
 #content > * {
@@ -161,7 +166,7 @@ nav a:hover {
 .nav__list {
   float: right;
   margin: 0px;
-  padding: 0px 100px 0px 0px;
+  padding: 0px 50px 0px 0px;
 }
 
 .nav__list li {

@@ -141,6 +141,7 @@ nav a:hover {
     border-left: none;
     padding-left: 0;
 }
+
 /* Applies to code blocks */
 .highlight pre {
   font-size: 14px;
@@ -169,6 +170,10 @@ nav a:hover {
   padding: 0px 10px;
 }
 
+.page_listing {
+  text-decoration: none !important;
+  text-align: center;
+}
 .post_list {
   list-style-type: none;
   padding: 10px 10px;

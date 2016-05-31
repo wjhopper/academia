@@ -106,6 +106,10 @@ nav a:hover {
     background: black;
 }
 
+nav > h1 > a:hover {
+    background: none;
+}
+
 /* Classes and ID's */
 #avatar {
   display: inline;

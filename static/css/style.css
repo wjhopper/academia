@@ -10,9 +10,6 @@ a:hover {
 
 /* Sidebar */
 aside {
-  background-color: #8C1D01;
-  background-image: linear-gradient(to top, rgba(0, 0, 0, 0.5) 0px, rgba(0, 0, 0, 0.3) 70%, transparent 100%);
-  color: white;
   text-align: center;
   position: fixed;
   top: 70px;
@@ -44,7 +41,6 @@ footer > p {
 
 html {
   font-family: 'Open Sans', 'helvetica', sans-serif;
-  background: white;
   font-size: 14px;
 }
 
@@ -74,7 +70,8 @@ h4 {
 }
 
 nav {
-  background: #8C1D01 none repeat scroll 0% 0%;
+  background-color: #8C1D01;
+  background-image: linear-gradient(to top, rgba(0, 0, 0, 0.45) 0px, rgba(0, 0, 0, 0.1) 40%, transparent 100%);
   color: #FFF;
   font-size: 1.25em;
   padding: 15px 0;

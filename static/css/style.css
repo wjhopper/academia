@@ -28,12 +28,7 @@ aside > ul {
 }
 
 body {
-  margin: 0
-}
-
-footer, #content {
-  margin-left: 20%;
-  margin-right: 5%;
+  margin: 0;
 }
 
 footer {
@@ -113,13 +108,23 @@ nav > h1 > a:hover {
 /* Classes and ID's */
 #avatar {
   display: inline;
-  margin: 10px auto;
+  max-width: 90%;
+  margin: 0 auto 10px;
+  -moz-box-shadow: 0 0 2px 2px #190500;
+  -webkit-box-shadow: 0 0 2px 2px #190500;
+  box-shadow: 0 0 2px 2px #190500;
   border-radius: 50%;
 }
 
-#content {
+#container {
+  background-color: white;
+  margin-left: 20%;
+  margin-right: 5%;
   margin-top: 70px;
-  padding: 30px 10%;
+}
+
+#content {
+  padding: 30px 7%;
 }
 
 #content > * {
@@ -222,7 +227,6 @@ nav > h1 > a:hover {
   #avatar {
     height: 50px;
     width: 50px;
-    margin: 10px auto;
   }
 
 }

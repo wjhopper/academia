@@ -90,10 +90,11 @@
   </aside>
 
   <!-- Content -->
+  <div id = "container">
   {% block content %}
-  <div id = "content">
-    <p id = "welcome"> Welcome to {{ AUTHOR }}'s home page </p>
-  </div>
+    <div id = "content">
+      <p id = "welcome"> Welcome to {{ AUTHOR }}'s home page </p>
+    </div>
   {% endblock %}
 
   <!-- Footer -->
@@ -104,7 +105,7 @@
       Theme <a href="https://github.com/wjhopper/academia-red">academia-red</a> by <a href="http://hopperlab.com/">Will Hopper</a>.
     </p>
   </footer>
-
+  </div>
 
   {% if GOOGLE_ANALYTICS %}
   <!-- Analytics -->

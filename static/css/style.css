@@ -14,18 +14,14 @@ aside {
   position: fixed;
   top: 70px;
   left: 0px;
-  width: 20%;
+  width: 175px;
   height: 100%;
+  padding-left: 20px;
 }
 
-aside > ul {
-  list-style-type: none;
-  padding: 0px 10px;
-  margin-top: 0px;
-}
-
-body {
-  margin: 0;
+aside a, aside a:link {
+  color: #FFF;
+  display: block;
 }
 
 footer {
@@ -42,16 +38,6 @@ footer > p {
 html {
   font-family: 'Open Sans', 'helvetica', sans-serif;
   font-size: 14px;
-}
-
-h1 {
-  display: inline-block;
-  margin: 0 0 0 15px;
-  z-index: 1000;
-  position: relative;
-  font-size: 40px;
-  line-height: 1;
-  letter-spacing: 1px;
 }
 
 h2 {
@@ -80,10 +66,10 @@ nav {
   left: 0px;
   width: 100%;
   height: 40px;
+  z-index: 1000;
 }
 
 nav a {
-    text-decoration: none;
     transition: all .2s ease-in-out;
     display: inline;
     border-radius: 5px;
@@ -102,7 +88,49 @@ nav > h1 > a:hover {
     background: none;
 }
 
+
+/* Code
+–––––––––––––––––––––––––––––––––––––––––––––––––– */
+code {
+  padding: .2rem .5rem;
+  margin: 0 .2rem;
+  font-size: 90%;
+  white-space: nowrap;
+  background: #F1F1F1;
+  border: 1px solid #E1E1E1;
+  border-radius: 4px; }
+pre > code {
+  display: block;
+  padding: 1rem 1.5rem;
+  white-space: pre; }
+
+
+/* Tables
+–––––––––––––––––––––––––––––––––––––––––––––––––– */
+th,
+td {
+  padding: 12px 15px;
+  text-align: left;
+  border-bottom: 1px solid #E1E1E1; }
+th:first-child,
+td:first-child {
+  padding-left: 0; }
+th:last-child,
+td:last-child {
+  padding-right: 0; }
+
+
 /* Classes and ID's */
+
+#author {
+  display: inline-block;
+  margin: 0 0 0 15px;
+  position: relative;
+  font-size: 40px;
+  line-height: 1;
+  letter-spacing: 1px;
+}
+
 #avatar {
   display: inline;
   max-width: 90%;
@@ -118,39 +146,6 @@ nav > h1 > a:hover {
   margin-left: 20%;
   margin-right: 5%;
   margin-top: 70px;
-}
-
-#content {
-  padding: 30px 7%;
-}
-
-#content > * {
-  margin: .75em auto;;
-}
-
-#content h3 {
-  text-decoration: underline;
-  font-size: 20px;
-
-}
-
-#content h4, #content p {
-  padding-left: 20px;
-}
-
-#content h4 {
-  font-size: 18px;
-}
-
-#content li {
-  display: inline-block;
-  padding: 0 10px;
-  border-left: 1px solid #000;
-}
-
-#content ul li:first-child {
-    border-left: none;
-    padding-left: 0;
 }
 
 /* Applies to code blocks */
@@ -181,16 +176,33 @@ nav > h1 > a:hover {
   padding: 0px 10px;
 }
 
-.page_listing {
-  text-decoration: none !important;
-  text-align: center;
+div.page_listing {
+ text-align: center;
+ background-color: #F4F4F4;
+ min-height: 120px;
+ border-radius: 10px;
 }
+
+.page_listing h3 {
+  text-decoration: none !important;
+  margin-bottom: 5px;
+}
+
+.page_listing p {
+  padding: 5px;
+  margin-top: 5px;
+}
+
 .post_list {
   list-style-type: none;
   padding: 10px 10px;
   -moz-border-radius: 5px 0;
   -webkit-border-radius: 5px 0;
   border-radius: 5px 5px;
+}
+
+.row {
+  padding-bottom: 7px;
 }
 
 .social {
@@ -201,6 +213,240 @@ nav > h1 > a:hover {
 #welcome {
   text-align: center;
 }
+
+
+/* Grid
+–––––––––––––––––––––––––––––––––––––––––––––––––– */
+.content {
+  position: relative;
+  width: 100%;
+  max-width: 960px;
+  margin: 0 auto;
+  padding: 0 20px;
+  box-sizing: border-box; }
+
+.column, .columns {
+  width: 100%;
+  float: left;
+  box-sizing: border-box; }
+
+/* For devices larger than 400px */
+@media (min-width: 400px) {
+  .content {
+    width: 85%;
+    padding: 0; }
+}
+
+/* For devices larger than 550px */
+@media (min-width: 550px) {
+
+  .content {
+    max-width: 1000px;
+    padding: 30px 7%;
+  }
+
+  .content > * {
+    margin: .75em auto;;
+  }
+
+  .content h3 {
+    text-decoration: underline;
+    font-size: 20px;
+
+  }
+
+  .content h4, .content p {
+    padding-left: 20px;
+  }
+
+  .content h4 {
+    font-size: 18px;
+  }
+
+  .content li {
+    display: inline-block;
+    padding: 0 10px;
+    border-left: 1px solid #000;
+  }
+
+  .content ul li:first-child {
+      border-left: none;
+      padding-left: 0;
+  }
+
+
+  .column,
+  .columns {
+    margin-left: 4%; }
+  .column:first-child,
+  .columns:first-child {
+    margin-left: 0; }
+
+  .one.column,
+  .one.columns                    { width: 4.66666666667%; }
+  .two.columns                    { width: 13.3333333333%; }
+  .three.columns                  { width: 22%;            }
+  .four.columns                   { width: 30.6666666667%; }
+  .five.columns                   { width: 39.3333333333%; }
+  .six.columns                    { width: 48%;            }
+  .seven.columns                  { width: 56.6666666667%; }
+  .eight.columns                  { width: 65.3333333333%; }
+  .nine.columns                   { width: 74.0%;          }
+  .ten.columns                    { width: 82.6666666667%; }
+  .eleven.columns                 { width: 91.3333333333%; }
+  .twelve.columns                 { width: 100%; margin-left: 0; }
+
+  .one-third.column               { width: 30.6666666667%; }
+  .two-thirds.column              { width: 65.3333333333%; }
+
+  .one-half.column                { width: 48%; }
+
+  /* Offsets */
+  .offset-by-one.column,
+  .offset-by-one.columns          { margin-left: 8.66666666667%; }
+  .offset-by-two.column,
+  .offset-by-two.columns          { margin-left: 17.3333333333%; }
+  .offset-by-three.column,
+  .offset-by-three.columns        { margin-left: 26%;            }
+  .offset-by-four.column,
+  .offset-by-four.columns         { margin-left: 34.6666666667%; }
+  .offset-by-five.column,
+  .offset-by-five.columns         { margin-left: 43.3333333333%; }
+  .offset-by-six.column,
+  .offset-by-six.columns          { margin-left: 52%;            }
+  .offset-by-seven.column,
+  .offset-by-seven.columns        { margin-left: 60.6666666667%; }
+  .offset-by-eight.column,
+  .offset-by-eight.columns        { margin-left: 69.3333333333%; }
+  .offset-by-nine.column,
+  .offset-by-nine.columns         { margin-left: 78.0%;          }
+  .offset-by-ten.column,
+  .offset-by-ten.columns          { margin-left: 86.6666666667%; }
+  .offset-by-eleven.column,
+  .offset-by-eleven.columns       { margin-left: 95.3333333333%; }
+
+  .offset-by-one-third.column,
+  .offset-by-one-third.columns    { margin-left: 34.6666666667%; }
+  .offset-by-two-thirds.column,
+  .offset-by-two-thirds.columns   { margin-left: 69.3333333333%; }
+
+  .offset-by-one-half.column,
+  .offset-by-one-half.columns     { margin-left: 52%; }
+}
+
+.button {
+  display: inline-block;
+  height: 32px;
+  padding: 0 30px;
+  color: #555 ;
+  text-align: center;
+  font-size: 12px;
+  font-weight: 600;
+  line-height: 32px;
+  letter-spacing: .1rem;
+  text-transform: uppercase;
+  white-space: nowrap;
+  background-color: transparent;
+  border-radius: 4px;
+  border: 1px solid #bbb;
+  cursor: pointer;
+}
+
+.button:hover {
+  color: #333;
+  border-color: #888;
+  outline: 0;
+}
+
+.button.button-primary {
+  color: #FFF;
+  background-color: #8C1D01;
+  border-color: #8C1D01;
+}
+
+.button.button-primary:hover{
+  color: #FFF;
+  background-color: #000;
+  border-color: #000;
+  text-decoration: none;
+}
+
+aside .button, aside .button {
+  margin: 10px;
+  display: block;
+}
+
+div.button {
+  padding: 0px;
+}
+
+div.button img {
+  float:left;
+  margin-left: 10px;
+  display: inline;
+}
+/* Utilities
+–––––––––––––––––––––––––––––––––––––––––––––––––– */
+.u-full-width {
+  width: 100%;
+  box-sizing: border-box; }
+.u-max-full-width {
+  max-width: 100%;
+  box-sizing: border-box; }
+.u-pull-right {
+  float: right; }
+.u-pull-left {
+  float: left; }
+
+
+/* Misc
+–––––––––––––––––––––––––––––––––––––––––––––––––– */
+hr {
+  margin-top: 3rem;
+  margin-bottom: 3.5rem;
+  border-width: 0;
+  border-top: 1px solid #E1E1E1; }
+
+
+/* Clearing
+–––––––––––––––––––––––––––––––––––––––––––––––––– */
+
+/* Self Clearing Goodness */
+.content:after,
+.row:after,
+.u-cf {
+  content: "";
+  display: table;
+  clear: both; }
+
+
+/* Media Queries
+–––––––––––––––––––––––––––––––––––––––––––––––––– */
+/*
+Note: The best way to structure the use of media queries is to create the queries
+near the relevant code. For example, if you wanted to change the styles for buttons
+on small devices, paste the mobile query code up in the buttons section and style it
+there.
+*/
+
+
+/* Larger than mobile */
+@media (min-width: 400px) {}
+
+/* Larger than phablet (also point when grid becomes active) */
+@media (min-width: 550px) {}
+
+/* Larger than tablet */
+@media (min-width: 750px) {
+
+}
+
+/* Larger than desktop */
+@media (min-width: 1000px) {}
+
+/* Larger than Desktop HD */
+@media (min-width: 1200px) {}
+
 /*--------Responsive------------*/
 
 @media (max-width: 800px) {

@@ -21,6 +21,7 @@
   <link rel="stylesheet" href="{{ SITEURL }}/theme/css/style.css" type="text/css" />
   <link rel="stylesheet" href="{{ SITEURL }}/theme/css/pygments.css" type="text/css" />
 
+
   <!-- Feed Meta Data -->
   {% if FEED_ALL_ATOM %}
     <link href="{{ SITEURL }}/{{ FEED_ALL_ATOM }}" type="application/atom+xml" rel="alternate" title="{{ SITENAME }} ATOM Feed" />
@@ -39,7 +40,7 @@
 <body>
   <!-- Site navigation list -->
   <nav>
-    <h1> <a href="/" class="home"> {{ AUTHOR }} </a> </h1>
+    <h1 id = "author"> <a href="/" class="home"> {{ AUTHOR }} </a> </h1>
     <ul class="nav__list">
       {% for title, link in MENUITEMS %}
         <li><a class="nav__link" href="{{ link }}">{{ title }}</a></li>
@@ -61,38 +62,32 @@
     {% endif %}
     <br>
 
-    <p class="social">
-      {% if SOCIAL %}
-        {% for name, link in SOCIAL %}
-        <a href="{{ link }}" target="_blank" ><img src="{{ SITEURL }}/theme/images/icons/{{ name|lower }}.png"></a>
-        {% endfor %}
-      {% endif %}
-      {% if FEED_ALL_ATOM %}
-      <a href="{{ SITEURL }}/{{ FEED_ALL_ATOM }}" rel="alternate">
-        <img src="{{ SITEURL }}/theme/images/icons/rss.png"></a>
-      {% endif %}
-      {% if FEED_ALL_RSS %}
-      <a href="{{ SITEURL }}/{{ FEED_ALL_RSS }}" rel="alternate">
-        <img src="{{ SITEURL }}/theme/images/icons/rss.png"></a>
-      {% endif %}
-    </p>
-
-    <!--
-    {% if categories %}
-    <h2>Categories</h2>
-    <ul class="navbar">
-      {% for cat, null in categories %}
-      <li{% if cat == category %} class="active"{% endif %}><a href="{{ SITEURL }}/{{ cat.url }}">{{ cat }}</a></li>
+    {% if LINKS %}
+    <div id = "links">
+      {% for name, link in LINKS %}
+        <div class="button button-primary">
+          <img src="{{ SITEURL }}/theme/images/icons/{{ name|lower }}.png">
+          <a target="_blank" href="{{ link }}"> {{ name }} </a>
+        </div>
       {% endfor %}
-    </ul>
+    </div>
     {% endif %}
-    -->
+
+    {% if FEED_ALL_ATOM %}
+    <a href="{{ SITEURL }}/{{ FEED_ALL_ATOM }}" rel="alternate">
+      <img src="{{ SITEURL }}/theme/images/icons/rss.png"></a>
+    {% endif %}
+    {% if FEED_ALL_RSS %}
+    <a href="{{ SITEURL }}/{{ FEED_ALL_RSS }}" rel="alternate">
+      <img src="{{ SITEURL }}/theme/images/icons/rss.png"></a>
+    {% endif %}
+    
   </aside>
 
   <!-- Content -->
   <div id = "container">
   {% block content %}
-    <div id = "content">
+    <div class = "content">
       <p id = "welcome"> Welcome to {{ AUTHOR }}'s home page </p>
     </div>
   {% endblock %}

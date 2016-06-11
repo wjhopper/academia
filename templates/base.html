@@ -40,7 +40,7 @@
 <body>
   <!-- Site navigation list -->
   <nav>
-    <h1 id = "author"> <a href="/" class="home"> {{ AUTHOR }} </a> </h1>
+    <h1 id = "author"> <a href="{{ SITEURL }}" class="home"> {{ AUTHOR }} </a> </h1>
     <ul class="nav__list">
       {% for title, link in MENUITEMS %}
         <li><a class="nav__link" href="{{ link }}">{{ title }}</a></li>
@@ -81,7 +81,7 @@
     <a href="{{ SITEURL }}/{{ FEED_ALL_RSS }}" rel="alternate">
       <img src="{{ SITEURL }}/theme/images/icons/rss.png"></a>
     {% endif %}
-    
+
   </aside>
 
   <!-- Content -->

@@ -19,9 +19,10 @@ aside {
   padding-left: 20px;
 }
 
-aside a, aside a:link {
+aside a, aside a:link, aside a:visited {
   color: #FFF;
   display: block;
+
 }
 
 @media (max-width: 550px) {
@@ -92,7 +93,7 @@ nav a {
     border-radius: 5px;
 }
 
-nav a:link {
+nav a:link, nav a:visited {
     color: #FFF;
 }
 

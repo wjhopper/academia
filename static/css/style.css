@@ -24,6 +24,23 @@ aside a, aside a:link {
   display: block;
 }
 
+@media (max-width: 550px) {
+
+  aside {
+    left: 0;
+    max-width: none;
+    position: relative;
+    top: 0;
+    width: 100%;
+    padding: 0;
+    padding-top: 1px;
+  }
+
+  aside h4 {
+    display: none;
+  }
+}
+
 footer {
   padding: 0 5%;
 }
@@ -131,21 +148,43 @@ td:last-child {
   letter-spacing: 1px;
 }
 
+@media (max-width: 550px) {
+
+  #author {
+    font-size: 20px;
+  }
+}
+
 #avatar {
   display: inline;
   max-width: 90%;
-  margin: 0 auto 10px;
+  margin: 10px auto;
   -moz-box-shadow: 0 0 2px 2px #190500;
   -webkit-box-shadow: 0 0 2px 2px #190500;
   box-shadow: 0 0 2px 2px #190500;
   border-radius: 50%;
 }
 
+@media (max-width: 550px) {
+  #avatar {
+    height: 100px;
+    width: 100px;
+    margin-top: 90px;
+    margin-bottom: 0px;
+  }
+}
+
 #container {
   background-color: white;
-  margin-left: 20%;
-  margin-right: 5%;
-  margin-top: 70px;
+  margin: auto;
+}
+
+@media (min-width: 550px) {
+  #container {
+    margin-left: 20%;
+    margin-right: 5%;
+    margin-top: 70px;
+  }
 }
 
 /* Applies to code blocks */
@@ -171,9 +210,45 @@ td:last-child {
 }
 
 .nav__list li {
-  display: inline-block;
+  display: inline;
   line-height: 40px;
   padding: 0px 10px;
+}
+
+@media (max-width: 850px) {
+
+  nav {
+    font-size: inherit;
+    height:auto;
+  }
+
+  .nav__link {
+    padding: 1px;
+  }
+
+  .nav__list {
+    float: right;
+    margin: 0px;
+    padding: 5px;
+    max-width: 300px;
+    font-size: inherit;
+  }
+
+  .nav__list li {
+    line-height: inherit;
+  }
+}
+
+@media (max-width: 475px) {
+
+  nav {
+    padding-bottom: 0;
+  }
+
+  .nav__list {
+    float: none;
+    max-width: none;
+  }
 }
 
 div.page_listing {
@@ -182,6 +257,7 @@ div.page_listing {
  min-height: 120px;
  border-radius: 10px;
 }
+
 
 .page_listing h3 {
   text-decoration: none !important;
@@ -203,6 +279,17 @@ div.page_listing {
 
 .row {
   padding-bottom: 7px;
+}
+
+@media (max-width: 550px) {
+
+  div.page_listing {
+    margin-bottom: 7px;
+  }
+
+  .row {
+    padding-bottom: 0;
+  }
 }
 
 .social {
@@ -229,6 +316,7 @@ div.page_listing {
   width: 100%;
   float: left;
   box-sizing: border-box; }
+
 
 /* For devices larger than 400px */
 @media (min-width: 400px) {
@@ -451,25 +539,9 @@ there.
 
 @media (max-width: 800px) {
 
-  aside {
-    left: 0;
-    max-width: none;
-    position: relative;
-    top: 0;
-    width: 100%;
-    padding: 0;
-    padding-top: 1px;
-  }
-
   footer {
     padding: 1em;
     margin-left: 1em;
     margin-top: 0;
   }
-
-  #avatar {
-    height: 50px;
-    width: 50px;
-  }
-
 }

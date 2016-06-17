@@ -15,6 +15,14 @@
 {% block content_title %}{% endblock %}
 
 {% block content %}
+
+ 	{% for page in hidden_pages %}
+		{% if page.slug is equalto 'home' %}
+			{{ page.content }}
+		{% endif %}
+	{% endfor %}
+
+
 	{% for page in pages %}
 		{% if loop.index is odd %}
 			<div class="row">

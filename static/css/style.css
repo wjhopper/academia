@@ -55,7 +55,8 @@ footer > p {
 
 html {
   font-family: 'Open Sans', 'helvetica', sans-serif;
-  font-size: 14px;
+  font-size: 15px;
+  line-height: 1.6;
 }
 
 h2 {
@@ -141,7 +142,7 @@ td:last-child {
 /* Classes and ID's */
 
 #author {
-  display: inline-block;
+  display: inline;
   margin: 0 0 0 15px;
   position: relative;
   font-size: 40px;
@@ -207,7 +208,7 @@ td:last-child {
 .nav__list {
   float: right;
   margin: 0px;
-  padding: 0px 50px 0px 0px;
+  padding: 0 15px 0 0;
 }
 
 .nav__list li {
@@ -228,11 +229,8 @@ td:last-child {
   }
 
   .nav__list {
-    float: right;
-    margin: 0px;
-    padding: 5px;
+    padding-left: 5px;
     max-width: 300px;
-    font-size: inherit;
   }
 
   .nav__list li {
@@ -257,6 +255,7 @@ div.page_listing {
  background-color: #F4F4F4;
  min-height: 120px;
  border-radius: 10px;
+ box-shadow: 0 0 3px 0;
 }
 
 
@@ -279,6 +278,7 @@ div.page_listing {
 }
 
 .row {
+  margin: 15px auto;
   padding-bottom: 7px;
 }
 

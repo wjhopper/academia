@@ -11,35 +11,35 @@ a:hover {
 /* Sidebar */
 aside {
   text-align: center;
-  position: fixed;
-  top: 55px;
-  left: 0px;
-  width: 175px;
-  height: 100%;
-  padding-left: 20px;
+  width: 100%;
+  padding: 1em 0;
 }
 
+@media (min-width: 575px) {
+  aside {
+    position: fixed;
+    left: 0px;
+    width: 120px;
+    height: 100%;
+    padding: 15px 0 0 15px;
+    top: 35px;
+    margin-top: 0;
+  }
+}
+
+@media (min-width: 750px) {
+  aside {
+    width: 175px;
+    top: 55px;
+  }
+}
 aside a, aside a:link, aside a:visited {
   color: #FFF;
   display: block;
-
 }
 
-@media (max-width: 575px) {
-
-  aside {
-    left: 0;
-    max-width: none;
-    position: relative;
-    top: 0;
-    width: 100%;
-    padding: 0;
-    padding-top: 1px;
-  }
-
-  aside h4 {
-    display: none;
-  }
+aside h4 {
+  margin: 0 auto;
 }
 
 body {
@@ -47,7 +47,7 @@ body {
 }
 
 footer {
-  padding: 0 5%;
+  padding: 1em;
 }
 
 footer > p {
@@ -62,6 +62,11 @@ html {
   font-size: 15px;
 }
 
+@media (min-width: 1000px) {
+
+}
+
+
 h2 {
   font-size: 26px;
   margin-top: 0 !important;
@@ -69,24 +74,29 @@ h2 {
   border-bottom: black 1px solid;
 }
 
-h3 {
-  font-size: 20
-}
-
-h4 {
-  margin: 1em auto;
-}
-
 nav {
   background-color: #8C1D01;
   background-image: linear-gradient(to top, rgba(0, 0, 0, 0.45) 0px, rgba(0, 0, 0, 0.1) 40%, transparent 100%);
   color: #FFF;
-  position: fixed;
-  top: 0px;
-  left: 0px;
-  width: 100%;
-  height: 55px;
-  z-index: 1000;
+  text-align: center;
+}
+
+@media (min-width: 575px) {
+  nav {
+    position: fixed;
+    height: 35px;
+    top: 0px;
+    left: 0px;
+    width: 100%;
+    z-index: 1000;
+    text-align: left;
+  }
+}
+/* Larger than tablet */
+@media (min-width: 750px) {
+  nav {
+    height: 55px;
+  }
 }
 
 nav a {
@@ -107,6 +117,7 @@ nav a:hover {
 nav > h1 > a:hover {
     background: none;
 }
+
 
 
 /* Code
@@ -143,48 +154,57 @@ td:last-child {
 /* Classes and ID's */
 
 #author {
-  display: inline;
-  margin: 0 0 0 15px;
-  font-size: 35px;
+  font-size: 22px;
+  margin: 0;
   letter-spacing: 1px;
 }
 
-@media (max-width: 575px) {
-
+@media (min-width: 575px) {
   #author {
-    font-size: 20px;
+    display: inline;
+  }
+}
+
+@media (min-width: 750px) {
+  #author {
+    font-size: 35px;
+    margin-left: 15px;
   }
 }
 
 #avatar {
-  display: inline;
-  max-width: 90%;
-  margin: 10px auto;
+  display: block;
+  width: 100px;
+  margin: 15px auto;
   -moz-box-shadow: 0 0 2px 2px #190500;
   -webkit-box-shadow: 0 0 2px 2px #190500;
   box-shadow: 0 0 2px 2px #190500;
   border-radius: 50%;
 }
 
-@media (max-width: 575px) {
+@media (min-width: 575px) {
   #avatar {
-    height: 100px;
-    width: 100px;
-    margin-top: 90px;
-    margin-bottom: 0px;
+    height:auto;
+    width: auto;
+    max-width: 90%;
   }
 }
 
 #container {
-  background-color: white;
-  margin: auto;
+  margin: 5px 3%;
 }
 
 @media (min-width: 575px) {
   #container {
-    margin-left: 20%;
-    margin-right: 5%;
-    margin-top: 70px;
+    margin-top: 35px;
+    margin-left: 150px;
+  }
+}
+
+@media (min-width: 750px) {
+  #container {
+    margin-top: 55px;
+    margin-left: 200px;
   }
 }
 
@@ -200,62 +220,52 @@ td:last-child {
   margin: 0;
 }
 
-.nav__link {
-  padding: 5px 15px;
-}
-
-.nav__list {
-  float: right;
-  padding: 0 15px 0 0;
-  font-size: 1.25em;
-}
-
 .nav__list li {
   display: inline;
-  line-height: 55px;
+  line-height: 35px;
+  padding: 0;
+}
+
+.nav__link {
+  padding: 3px 15px;
+}
+@media (min-width: 575px) {
+    .nav__list {
+      float: right;
+    }
+}
+
+@media (min-width: 750px) {
+  .nav__list {
+    font-size: 1.25em;
+  }
+
+  .nav__list li {
+    line-height: 55px;
+  }
+
+  .nav__link {
+    padding: 5px 15px;
+  }
 }
 
 .nav__list li:last-child a {
-  padding-right: 0;
-}
-
-
-@media (max-width: 750px) {
-
-  nav {
-    font-size: inherit;
-    height:auto;
-  }
-
-  .nav__list li:last-child {
-    padding-right 0;
-  }
-}
-
-@media (max-width: 475px) {
-
-  nav {
-    padding-bottom: 0;
-  }
-
-  .nav__list {
-    float: none;
-    max-width: none;
-  }
+  padding-right: 15;
 }
 
 div.page_listing {
- text-align: center;
- background-color: #F4F4F4;
- min-height: 120px;
- border-radius: 10px;
- box-shadow: 0 0 3px 0;
+  text-align: center;
+  background-color: #F4F4F4;
+  min-height: 100px;
+  border-radius: 10px;
+  box-shadow: 0 0 3px 0;
+  margin-bottom: 10px;
 }
 
 
 .page_listing h3 {
   text-decoration: none !important;
-  margin-bottom: 5px;
+  margin: 5px auto;
 }
 
 .page_listing p {
@@ -271,31 +281,10 @@ div.page_listing {
   border-radius: 5px 5px;
 }
 
-.row {
-  margin: 15px auto;
-  padding-bottom: 7px;
-}
-
-@media (max-width: 575px) {
-
-  div.page_listing {
-    margin-bottom: 7px;
-  }
-
-  .row {
-    padding-bottom: 0;
-  }
-}
-
 .social {
   display: inline-block;
   margin-top: 40px;
 }
-
-#welcome {
-  text-align: center;
-}
-
 
 /* Grid
 –––––––––––––––––––––––––––––––––––––––––––––––––– */
@@ -316,7 +305,7 @@ div.page_listing {
 
 
 /* For devices larger than 400px */
-@media (min-width: 400px) {
+@media (min-width: 575px) {
   .content {
     width: 85%;
     padding: 0; }
@@ -325,13 +314,12 @@ div.page_listing {
 /* For devices larger than 575px */
 @media (min-width: 575px) {
 
-  .content {
-    max-width: 1000px;
-    padding: 30px 7%;
-  }
-
   .content > * {
     margin: .75em auto;;
+  }
+  .content > h2 {
+    padding-top: 15px;
+    line-height: 1.25;
   }
 
   .content h3 {
@@ -340,7 +328,7 @@ div.page_listing {
 
   }
 
-  .content h4, .content p {
+  .content h4 {
     padding-left: 20px;
   }
 
@@ -461,6 +449,14 @@ aside .button, aside .button {
   display: block;
 }
 
+@media (min-width: 575px) {
+  aside .button, aside .button {
+    margin: 10px 0;
+    display: block;
+  }
+}
+
+
 div.button {
   padding: 0px;
 }
@@ -468,7 +464,6 @@ div.button {
 div.button img {
   float:left;
   margin-left: 10px;
-  display: inline;
 }
 /* Utilities
 –––––––––––––––––––––––––––––––––––––––––––––––––– */
@@ -522,23 +517,10 @@ there.
 @media (min-width: 575px) {}
 
 /* Larger than tablet */
-@media (min-width: 750px) {
-
-}
+@media (min-width: 750px) {}
 
 /* Larger than desktop */
 @media (min-width: 1000px) {}
 
 /* Larger than Desktop HD */
 @media (min-width: 1200px) {}
-
-/*--------Responsive------------*/
-
-@media (max-width: 800px) {
-
-  footer {
-    padding: 1em;
-    margin-left: 1em;
-    margin-top: 0;
-  }
-}

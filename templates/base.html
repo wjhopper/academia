@@ -41,9 +41,11 @@
   <!-- Site navigation list -->
   <nav>
     <h1 id = "author"> <a href="{{ SITEURL }}" class="home"> {{ AUTHOR }} </a> </h1>
-    <ul class="nav__list">
+    <ul class="nav__list list-bare">
       {% for title, link in MENUITEMS %}
-        <li><a class="nav__link" href="{{ link }}">{{ title }}</a></li>
+        <li>
+            <a class="nav__link" href="{{ link }}">{{ title }}</a>
+        </li>
       {% endfor %}
 
       {% if DISPLAY_PAGES_ON_MENU and PAGES %}

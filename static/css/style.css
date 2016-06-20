@@ -12,7 +12,7 @@ a:hover {
 aside {
   text-align: center;
   position: fixed;
-  top: 70px;
+  top: 55px;
   left: 0px;
   width: 175px;
   height: 100%;
@@ -25,7 +25,7 @@ aside a, aside a:link, aside a:visited {
 
 }
 
-@media (max-width: 550px) {
+@media (max-width: 575px) {
 
   aside {
     left: 0;
@@ -42,6 +42,10 @@ aside a, aside a:link, aside a:visited {
   }
 }
 
+body {
+  margin: 0;
+}
+
 footer {
   padding: 0 5%;
 }
@@ -56,7 +60,6 @@ footer > p {
 html {
   font-family: 'Open Sans', 'helvetica', sans-serif;
   font-size: 15px;
-  line-height: 1.6;
 }
 
 h2 {
@@ -78,13 +81,11 @@ nav {
   background-color: #8C1D01;
   background-image: linear-gradient(to top, rgba(0, 0, 0, 0.45) 0px, rgba(0, 0, 0, 0.1) 40%, transparent 100%);
   color: #FFF;
-  font-size: 1.25em;
-  padding: 15px 0;
   position: fixed;
   top: 0px;
   left: 0px;
   width: 100%;
-  height: 40px;
+  height: 55px;
   z-index: 1000;
 }
 
@@ -144,13 +145,11 @@ td:last-child {
 #author {
   display: inline;
   margin: 0 0 0 15px;
-  position: relative;
-  font-size: 40px;
-  line-height: 1;
+  font-size: 35px;
   letter-spacing: 1px;
 }
 
-@media (max-width: 550px) {
+@media (max-width: 575px) {
 
   #author {
     font-size: 20px;
@@ -167,7 +166,7 @@ td:last-child {
   border-radius: 50%;
 }
 
-@media (max-width: 550px) {
+@media (max-width: 575px) {
   #avatar {
     height: 100px;
     width: 100px;
@@ -181,7 +180,7 @@ td:last-child {
   margin: auto;
 }
 
-@media (min-width: 550px) {
+@media (min-width: 575px) {
   #container {
     margin-left: 20%;
     margin-right: 5%;
@@ -207,34 +206,29 @@ td:last-child {
 
 .nav__list {
   float: right;
-  margin: 0px;
   padding: 0 15px 0 0;
+  font-size: 1.25em;
 }
 
 .nav__list li {
   display: inline;
-  line-height: 40px;
-  padding: 0px 10px;
+  line-height: 55px;
 }
 
-@media (max-width: 850px) {
+.nav__list li:last-child a {
+  padding-right: 0;
+}
+
+
+@media (max-width: 750px) {
 
   nav {
     font-size: inherit;
     height:auto;
   }
 
-  .nav__link {
-    padding: 1px;
-  }
-
-  .nav__list {
-    padding-left: 5px;
-    max-width: 300px;
-  }
-
-  .nav__list li {
-    line-height: inherit;
+  .nav__list li:last-child {
+    padding-right 0;
   }
 }
 
@@ -282,7 +276,7 @@ div.page_listing {
   padding-bottom: 7px;
 }
 
-@media (max-width: 550px) {
+@media (max-width: 575px) {
 
   div.page_listing {
     margin-bottom: 7px;
@@ -311,7 +305,9 @@ div.page_listing {
   max-width: 960px;
   margin: 0 auto;
   padding: 0 20px;
-  box-sizing: border-box; }
+  box-sizing: border-box;
+  line-height: 1.6;
+}
 
 .column, .columns {
   width: 100%;
@@ -326,8 +322,8 @@ div.page_listing {
     padding: 0; }
 }
 
-/* For devices larger than 550px */
-@media (min-width: 550px) {
+/* For devices larger than 575px */
+@media (min-width: 575px) {
 
   .content {
     max-width: 1000px;
@@ -523,7 +519,7 @@ there.
 @media (min-width: 400px) {}
 
 /* Larger than phablet (also point when grid becomes active) */
-@media (min-width: 550px) {}
+@media (min-width: 575px) {}
 
 /* Larger than tablet */
 @media (min-width: 750px) {

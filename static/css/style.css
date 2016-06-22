@@ -38,6 +38,10 @@ aside a, aside a:link, aside a:visited {
   display: block;
 }
 
+aside a:hover {
+  text-decoration: none;
+}
+
 aside h4 {
   margin: 0 auto;
 }
@@ -162,13 +166,13 @@ td:last-child {
 @media (min-width: 575px) {
   #author {
     display: inline;
+    margin-left: 15px;
   }
 }
 
 @media (min-width: 750px) {
   #author {
     font-size: 35px;
-    margin-left: 15px;
   }
 }
 
@@ -260,6 +264,7 @@ div.page_listing {
   border-radius: 10px;
   box-shadow: 0 0 3px 0;
   margin-bottom: 10px;
+  overflow: hidden;
 }
 
 
@@ -269,21 +274,7 @@ div.page_listing {
 }
 
 .page_listing p {
-  padding: 5px;
-  margin-top: 5px;
-}
-
-.post_list {
-  list-style-type: none;
-  padding: 10px 10px;
-  -moz-border-radius: 5px 0;
-  -webkit-border-radius: 5px 0;
-  border-radius: 5px 5px;
-}
-
-.social {
-  display: inline-block;
-  margin-top: 40px;
+  margin: 0 0 5px 0;
 }
 
 /* Grid
@@ -407,6 +398,12 @@ div.page_listing {
   .offset-by-one-half.columns     { margin-left: 52%; }
 }
 
+.row {
+  line-height: 1.25;
+}
+
+/* Buttons
+–––––––––––––––––––––––––––––––––––––––––––––––––– */
 .button {
   display: inline-block;
   height: 32px;
@@ -445,7 +442,7 @@ div.page_listing {
 }
 
 aside .button, aside .button {
-  margin: 10px;
+  margin: 10px 10%;
   display: block;
 }
 
@@ -456,15 +453,15 @@ aside .button, aside .button {
   }
 }
 
-
 div.button {
   padding: 0px;
 }
 
 div.button img {
   float:left;
-  margin-left: 10px;
+  margin-left: 5%;
 }
+
 /* Utilities
 –––––––––––––––––––––––––––––––––––––––––––––––––– */
 .u-full-width {

@@ -12,7 +12,7 @@ a:hover {
 aside {
   text-align: center;
   width: 100%;
-  padding: 1em 0;
+  padding: 1em 0 0;
 }
 
 @media (min-width: 575px) {
@@ -33,9 +33,11 @@ aside {
     top: 55px;
   }
 }
+
 aside a, aside a:link, aside a:visited {
   color: #FFF;
   display: block;
+  padding: 0 5px;
 }
 
 aside a:hover {
@@ -66,11 +68,6 @@ html {
   font-size: 15px;
 }
 
-@media (min-width: 1000px) {
-
-}
-
-
 h2 {
   font-size: 26px;
   margin-top: 0 !important;
@@ -96,7 +93,7 @@ nav {
     text-align: left;
   }
 }
-/* Larger than tablet */
+
 @media (min-width: 750px) {
   nav {
     height: 55px;
@@ -104,58 +101,30 @@ nav {
 }
 
 nav a {
-    transition: all .2s ease-in-out;
-    display: inline;
-    border-radius: 5px;
+  transition: all .2s ease-in-out;
+  display: inline;
+  border-radius: 5px;
 }
 
 nav a:link, nav a:visited {
-    color: #FFF;
+  color: #FFF;
 }
 
 nav a:hover {
-    text-decoration: none;
-    background: black;
+  text-decoration: none;
+  background: black;
 }
 
 nav > h1 > a:hover {
     background: none;
 }
 
+sup {
+  font-size: 9px;
+}
 
-
-/* Code
-–––––––––––––––––––––––––––––––––––––––––––––––––– */
-code {
-  padding: .2rem .5rem;
-  margin: 0 .2rem;
-  font-size: 90%;
-  white-space: nowrap;
-  background: #F1F1F1;
-  border: 1px solid #E1E1E1;
-  border-radius: 4px; }
-pre > code {
-  display: block;
-  padding: 1rem 1.5rem;
-  white-space: pre; }
-
-
-/* Tables
-–––––––––––––––––––––––––––––––––––––––––––––––––– */
-th,
-td {
-  padding: 12px 15px;
-  text-align: left;
-  border-bottom: 1px solid #E1E1E1; }
-th:first-child,
-td:first-child {
-  padding-left: 0; }
-th:last-child,
-td:last-child {
-  padding-right: 0; }
-
-
-/* Classes and ID's */
+/* Classes and ID's
+____________________________________________________*/
 
 #author {
   font-size: 22px;
@@ -212,52 +181,61 @@ td:last-child {
   }
 }
 
+.footnote {
+  font-size: 12px;
+}
+
 /* Applies to code blocks */
 .highlight pre {
   font-size: 14px;
   overflow: scroll;
 }
 
-.list-bare {
+.list-bare{
   list-style: none;
   padding: 0;
   margin: 0;
 }
 
-.nav__list li {
-  display: inline;
-  line-height: 35px;
+#nav_list li {
+  display: inline-block;
+  margin: 3px 0;
   padding: 0;
 }
 
-.nav__link {
-  padding: 3px 15px;
+.nav_link {
+  padding: 3px 5px;
 }
+
 @media (min-width: 575px) {
-    .nav__list {
-      float: right;
-    }
+  #nav_list {
+    float: right;
+  }
+
+  #nav_list li {
+    line-height: 35px;
+  }
 }
 
 @media (min-width: 750px) {
-  .nav__list {
+  #nav_list {
     font-size: 1.25em;
   }
 
-  .nav__list li {
+  #nav_list li {
     line-height: 55px;
   }
 
-  .nav__link {
+  .nav_link {
     padding: 5px 15px;
   }
 }
 
-.nav__list li:last-child a {
+#nav_list li:last-child a {
   padding-right: 15;
 }
 
-div.page_listing {
+.page_listing {
   text-align: center;
   background-color: #F4F4F4;
   min-height: 100px;
@@ -267,7 +245,6 @@ div.page_listing {
   overflow: hidden;
 }
 
-
 .page_listing h3 {
   text-decoration: none !important;
   margin: 5px auto;
@@ -275,6 +252,44 @@ div.page_listing {
 
 .page_listing p {
   margin: 0 0 5px 0;
+  padding: 0 5px;
+}
+
+/* Code
+–––––––––––––––––––––––––––––––––––––––––––––––––– */
+code {
+  padding: .2rem .5rem;
+  margin: 0 .2rem;
+  font-size: 90%;
+  white-space: nowrap;
+  background: #F1F1F1;
+  border: 1px solid #E1E1E1;
+  border-radius: 4px;
+}
+
+pre > code {
+  display: block;
+  padding: 1rem 1.5rem;
+  white-space: pre;
+}
+
+/* Tables
+–––––––––––––––––––––––––––––––––––––––––––––––––– */
+th,
+td {
+  padding: 12px 15px;
+  text-align: left;
+  border-bottom: 1px solid #E1E1E1;
+}
+
+th:first-child,
+td:first-child {
+  padding-left: 0;
+}
+
+th:last-child,
+td:last-child {
+  padding-right: 0;
 }
 
 /* Grid
@@ -289,7 +304,24 @@ div.page_listing {
   line-height: 1.6;
 }
 
-.column, .columns {
+.content h3 {
+  text-decoration: underline;
+}
+
+.content h4 {
+  text-align: center;
+}
+
+.content li {
+  padding: 0 10px;
+  font-size: 14px;
+  font-weight: 600;
+  text-transform: uppercase;
+}
+
+
+.column,
+.columns {
   width: 100%;
   float: left;
   box-sizing: border-box; }
@@ -299,45 +331,39 @@ div.page_listing {
 @media (min-width: 575px) {
   .content {
     width: 85%;
-    padding: 0; }
-}
-
-/* For devices larger than 575px */
-@media (min-width: 575px) {
+    padding: 0;
+  }
 
   .content > * {
-    margin: .75em auto;;
+    margin: .333em auto;
   }
-  .content > h2 {
+
+  .content h2 {
     padding-top: 15px;
     line-height: 1.25;
   }
 
   .content h3 {
-    text-decoration: underline;
     font-size: 20px;
-
-  }
-
-  .content h4 {
-    padding-left: 20px;
   }
 
   .content h4 {
     font-size: 18px;
+    text-align: left;
+  }
+
+  .content > p {
+    padding-left: 20px;
   }
 
   .content li {
     display: inline-block;
     padding: 0 10px;
     border-left: 1px solid #000;
+    font-size: 14px;
+    font-weight: 600;
+    text-transform: uppercase;
   }
-
-  .content ul li:first-child {
-      border-left: none;
-      padding-left: 0;
-  }
-
 
   .column,
   .columns {
@@ -422,12 +448,6 @@ div.page_listing {
   cursor: pointer;
 }
 
-.button:hover {
-  color: #333;
-  border-color: #888;
-  outline: 0;
-}
-
 .button.button-primary {
   color: #FFF;
   background-color: #8C1D01;
@@ -441,26 +461,29 @@ div.page_listing {
   text-decoration: none;
 }
 
-aside .button, aside .button {
-  margin: 10px 10%;
-  display: block;
-}
-
-@media (min-width: 575px) {
-  aside .button, aside .button {
-    margin: 10px 0;
-    display: block;
-  }
-}
-
-div.button {
+aside .button {
+  margin: 5px;
   padding: 0px;
 }
 
-div.button img {
-  float:left;
-  margin-left: 5%;
+@media (min-width: 575px) {
+  aside .button {
+    display: block;
+    margin-left: 0;
+    margin-right: 0;
+  }
 }
+
+aside .button img {
+  vertical-align:top;
+}
+
+@media (min-width: 575px) {
+  aside .button img {
+      float: left;
+  }
+}
+
 
 /* Utilities
 –––––––––––––––––––––––––––––––––––––––––––––––––– */
@@ -475,15 +498,14 @@ div.button img {
 .u-pull-left {
   float: left; }
 
-
 /* Misc
 –––––––––––––––––––––––––––––––––––––––––––––––––– */
 hr {
   margin-top: 3rem;
   margin-bottom: 3.5rem;
   border-width: 0;
-  border-top: 1px solid #E1E1E1; }
-
+  border-top: 1px solid #E1E1E1;
+}
 
 /* Clearing
 –––––––––––––––––––––––––––––––––––––––––––––––––– */
@@ -494,30 +516,5 @@ hr {
 .u-cf {
   content: "";
   display: table;
-  clear: both; }
-
-
-/* Media Queries
-–––––––––––––––––––––––––––––––––––––––––––––––––– */
-/*
-Note: The best way to structure the use of media queries is to create the queries
-near the relevant code. For example, if you wanted to change the styles for buttons
-on small devices, paste the mobile query code up in the buttons section and style it
-there.
-*/
-
-
-/* Larger than mobile */
-@media (min-width: 400px) {}
-
-/* Larger than phablet (also point when grid becomes active) */
-@media (min-width: 575px) {}
-
-/* Larger than tablet */
-@media (min-width: 750px) {}
-
-/* Larger than desktop */
-@media (min-width: 1000px) {}
-
-/* Larger than Desktop HD */
-@media (min-width: 1200px) {}
+  clear: both;
+}

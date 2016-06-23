@@ -1,102 +1,44 @@
-# academia-red
+# academia
+A responsive theme for the [Pelican](http://blog.getpelican.com/) Static Site Generator, powered by [Python](https://www.python.org/).
+See it in action at http://people.umass.edu/whopper
 
-Responsive theme for [Pelican](http://blog.getpelican.com/) Static Site Generator, Powered by [Python](https://www.python.org/).
-Based on the [pelican-blue](https://github.com/Parbhat/pelican-blue) theme by [parbhat](https://parbhatpuri.com/)
-
-## Demo
-
-### Screenshots
-
-## Features
-
-* Responsive (Mobile Friendly Test on [Google](https://www.google.com/webmasters/tools/mobile-friendly/?url=https%3A%2F%2Fparbhatpuri.com%2F))
-* Fast (Load time tested on [Pingdom](http://tools.pingdom.com/fpt/#!/bT0Pry/https://parbhatpuri.com/): 540ms)
-* Syntax highlighting for code blocks
-* [Disqus](https://disqus.com/) for Comments
-* Google Analytics
-* RSS/ATOM feeds
-* Easy to install
+## Screenshots
+#### Larger Screens
+![Desktop](screenshots/desktop.png)
+#### Smaller Screens
+![Mobile](screenshots/mobile.png)
 
 ## Installation
+If you don't have an existing Pelican project, see the [Pelican Quickstart](http://docs.getpelican.com/en/3.6.3/quickstart.html) guide to get up and running. It is recommended you read the rest of the [Documentation](http://docs.getpelican.com/en/3.6.3/) as well, to make better use of Pelican.
 
-You can install academia-red theme to your earlier Pelican project or create a new project from the Pelican [Quickstart](http://docs.getpelican.com/en/3.6.3/quickstart.html) guide.
+1. Clone the repository
 
-* Clone the repository
+  ```
+  $ git clone https://github.com/wjhopper/academia.git
+  ```
+2. Install the theme
 
-```
-$ git clone https://github.com/wjhopper/academia-red.git
-```
+  ```
+  $ pelican-themes -i /path/to/cloned/repository
+  ```
+3. Create a `THEME` variable in your `pelicanconf.py` file and set its value to `academia`.
 
-* Create a `THEME` variable in your `pelicanconf.py` file and set its value to the location of academia-red theme.
+  ```python
+  THEME = 'academia'
+  ```
+4. Add the following code to your `pelicanconf.py` file to fill in the content of the sidebar and the navbar.
 
-```python
-THEME = 'path-to-academia-red-theme'
-```
+  ```python
+  AUTHOR = 'Your Name'
+  SITESUBTITLE = 'Your subtitle goes here'
+  AVATAR = 'path/to/your/picture.jpg'
+  LINKS = (('cv', 'path/to/your/CV.pdf'),
+           ('email', 'mailto:username@domain_name'),
+           ('github', 'https://github.com/your_real_username'))
+  ```
 
-If you have placed the `academia-red` theme inside your project's pelican-themes folder, change the `THEME` variable in `pelicanconf.py` to
+5. To see your site and test out changes, start up the development web server by running `make devserver` in the directory where your Pelican site is set up, and navigate your web browser to http://localhost:8000
 
-```python
-THEME = 'pelican-themes/academia-red'
-```
+If you are having trouble seeing/downloading the content of static files or other resources, try setting `RELATIVE_URLS = True` in your  `pelicanconf.py`.
 
-* Add the following code to your `pelicanconf.py` file to display the social icons.
-
-```python
-SOCIAL = (('linkedin', 'https://www.linkedin.com/in/username'),
-          ('github', 'https://github.com/username'),
-          ('twitter', 'https://twitter.com/username'),
-          )
-```
-
-* That's it! You have installed `academia-red`. To see the Theme in action run the devserver
-
-```
-make devserver
-```
-
-**Note:** If you are new to Pelican Static Site Generator, you can read the Pelican [Docs](http://docs.getpelican.com/en/3.6.3/) to learn the working of Pelican. You can also customize the theme after reading the documentation.
-
-## Settings
-
-### pelicanconf.py
-
-academia-red theme use the following settings. You can add the following to your `pelicanconf.py` to get the site shown in the screenshots.
-
-```python
-SIDEBAR_DIGEST = 'Programmer and Web Developer'
-
-FAVICON = 'url-to-favicon'
-
-DISPLAY_PAGES_ON_MENU = True
-
-TWITTER_USERNAME = 'twitter-user-name'
-
-MENUITEMS = (('Blog', SITEURL),)
-```
-
-When developing locally, set the following variable:
-```
-SITEURL = 'http://localhost:8000'
-```
-
-### publishconf.py
-
-When you are ready to publish your site add the following settings to `publishconf.py` file
-
-```python
-SITEURL = 'http://your-domain-address'
-
-FEED_ALL_ATOM = 'feeds/all.atom.xml'
-CATEGORY_FEED_ATOM = 'feeds/%s.atom.xml'
-
-MENUITEMS = (('Blog', SITEURL),)
-
-DISQUS_SITENAME = ""
-GOOGLE_ANALYTICS = ""
-```
-
-For more information on publishing your site, read the publishing [docs](http://docs.getpelican.com/en/3.6.3/publish.html)
-
-## Contributing
-
-Your contributions are welcome to improve the `academia-red` theme.
+For information on publishing your site, read the [publishing docs](http://docs.getpelican.com/en/3.6.3/publish.html)

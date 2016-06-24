@@ -14,12 +14,13 @@
 
 {% block content %}
   <div class = "content home">
-   	{% for page in hidden_pages %}
-  		{% if page.slug is equalto 'home' %}
-  			{{ page.content }}
-  		{% endif %}
-  	{% endfor %}
-
+    <div id = "welcome">
+     	{% for page in hidden_pages %}
+    		{% if page.slug is equalto 'home' %}
+    			{{ page.content }}
+    		{% endif %}
+    	{% endfor %}
+    </div>
 
   	{% for page in pages %}
   		{% if loop.index is odd %}

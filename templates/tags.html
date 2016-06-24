@@ -12,10 +12,12 @@
 <meta property="og:image" content="{{ AVATAR }}" />
 {% endblock head %}
 {% block content %}
-<h2>Tags</h2>
-<ul>
-{% for tag, articles in tags %}
-    <li><a href="{{ SITEURL }}/{{ tag.url }}">{{ tag }}</li>
-{% endfor %}
-</ul>
+  <div class="content">
+    <h2>Tags</h2>
+    <ul class="tags">
+    {% for tag, articles in tags %}
+        <li><a href="{{ SITEURL }}/{{ tag.url }}">{{ tag }} </a></li>
+    {% endfor %}
+    </ul>
+  </div>
 {% endblock %}

@@ -12,8 +12,6 @@
 <meta property="og:image" content="" />
 {% endblock head %}
 
-{% block content_title %}{% endblock %}
-
 {% block content %}
 
  	{% for page in hidden_pages %}
@@ -42,18 +40,21 @@
 	{% endfor %}
 
 {% if articles %}
-<ol>
-	<h2 class="latest">Latest Posts</h2>
-	{% for article in (articles_page.object_list if articles_page else articles) %}
-	<li class="post_list"><p class="post_entry">
-		<h2 class="post_title"><a href="{{ SITEURL }}/{{ article.url }}" rel="bookmark" title="Permalink to {{ article.title|striptags }}">{{ article.title }}</a></h2>
-		<a href="{{ SITEURL }}/{{ article.author.url }}">@{{ article.author }}</a>
-		<span> in </span>
-		<span class="post_category"><a href="{{ SITEURL }}/{{ article.category.url }}" rel="bookmark" title="Permalink to {{ article.category|striptags }}">[ {{ article.category }} ]</a></span>
-		<span class="post_date">{{ article.locale_date }}</span>
-	</li>
-	{% endfor %}
-</ol>
+	<h2 id="latest">Latest Posts</h2>
+  <ul class="post_list list-bare" >
+  	{% for article in (articles_page.object_list if articles_page else articles) %}
+  	<li>
+      <ul>
+  		  <li class="post_title">
+          <h3><a href="{{ SITEURL }}/{{ article.url }}" rel="bookmark">{{ article.title }}</a></h3>
+        </li>
+  		  <li class="post_date">
+		      {{ article.locale_date }}
+        </li>
+      </ul>
+  	</li>
+  	{% endfor %}
+  </ul>
 {% endif %}
 
 {% if articles_page and articles_paginator.num_pages > 1 %}

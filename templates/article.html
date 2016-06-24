@@ -11,40 +11,30 @@
 <meta property="og:description" content="{{ article.summary }}" />
 <meta property="og:image" content="" />
 {% endblock head %}
-{% block title %}{{ article.title }}{% endblock %}
+
 {% block content %}
-<section id="content">
+  <div class="all-posts">
+    <a href="{{ SITEURL }}/{{ POSTS_URL }}">&#11013; View all posts</a>
+  </div>
+
     <article>
-        <h2 class="post_title post_detail"><a href="{{ SITEURL }}/{{ article.url }}" rel="bookmark" title="Permalink to {{ article.title }}">{{ article.title }}</a></h2>
+        <h2 class="post_title post_detail"><a href="{{ SITEURL }}/{{ article.url }}" rel="bookmark">{{ article.title }}</a></h2>
         <div class="entry-content blog-post">
             {{ article.content }}
         </div>
-        <div class="post_list">
-            <span>By </span>
-            <a href="{{ SITEURL }}/{{ article.author.url }}">@{{ article.author }}</a>
-            <span> in </span>
-            <span class="post_category"><a href="{{ SITEURL }}/{{ article.category.url }}" rel="bookmark" title="Permalink to {{ article.category|striptags }}">[ {{ article.category }} ]</a></span>
-            <span class="post_date">{{ article.locale_date }}</span>
-            <div><span>Tags : </span>
-                {% if article.tags %}
-                {% for tag in article.tags %}
-                <span><a href="{{ SITEURL }}/{{ tag.url }}">#{{ tag }}, </a></span>
-                {% endfor %}
-                {% endif %}
-            </div>
 
-            <div class="entry-social">
-                <span class="twitter"><a target="_blank" rel="nofollow" onclick="javascript:window.open(this.href, '', 'menubar=no,toolbar=no,resizable=yes,scrollbars=yes,height=400,width=700');return false;" title="Twitter" href="https://twitter.com/share?url={{ SITEURL }}/{{ article.url }}&text={{ article.title }}&via={{TWITTER_USERNAME}}"><img src="{{ SITEURL }}/theme/images/icons/twitter-s.png"></a></span>
+        {% if article.tags %}
+          <ul class="tags">
+              {% for tag in article.tags %}
+              <li><a href="{{ SITEURL }}/{{ tag.url }}">{{ tag }}</a></li>
+              {% endfor %}
+          </ul>
+        {% endif %}
 
-                <span class="gplus"><a target="_blank" title="Google +" href="https://plus.google.com/share?url={{ SITEURL }}/{{article.url}}&hl=fr" rel="nofollow" onclick="javascript:window.open(this.href, '', 'menubar=no,toolbar=no,resizable=yes,scrollbars=yes,height=450,width=650');return false;"><img src="{{ SITEURL }}/theme/images/icons/google-s.png"></a></span>
-
-                <span class="facebook"><a target="_blank" title="Facebook" rel="nofollow" onclick="javascript:window.open(this.href, '', 'menubar=no,toolbar=no,resizable=yes,scrollbars=yes,height=500,width=700');return false;" href="https://www.facebook.com/sharer.php?u={{ SITEURL }}/{{article.url}}&t={{ article.title }}"><img src="{{ SITEURL }}/theme/images/icons/facebook-s.png"></a></span>
-
-                <a  target="_blank" title="Linkedin" href="https://www.linkedin.com/shareArticle?mini=true&url={{ SITEURL }}/{{ article.url }}&title={{ article.title }}" rel="nofollow" onclick="javascript:window.open(this.href, '', 'menubar=no,toolbar=no,resizable=yes,scrollbars=yes,height=450,width=650');return false;"><img src="{{ SITEURL }}/theme/images/icons/linkedin-s.png"></a>
-
-                <span class="mail"><a href="mailto:?subject={{ article.title }}&amp;body=Viens découvrir un article à propos de [{{ article.title }}] sur le site de {{ AUTHOR }}. {{ SITEURL }}/{{article.url}}" title="Share by Email" target="_blank"><img src="{{ SITEURL }}/theme/images/icons/mail-s.png"></a></span>
-            </div>
+        <div class="all-posts">
+          <a href="{{ SITEURL }}/{{ POSTS_URL }}">&#11013; View all posts</a>
         </div>
+
         {% if DISQUS_SITENAME %}
         <div class="comments">
             <h2>Comments !</h2>
@@ -62,5 +52,4 @@
         </div>
         {% endif %}
     </article>
-</section>
 {% endblock %}

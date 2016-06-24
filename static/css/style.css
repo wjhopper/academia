@@ -54,6 +54,7 @@ body {
 
 footer {
   padding: 1em;
+  margin: 0 auto;
 }
 
 footer > p {
@@ -66,13 +67,6 @@ footer > p {
 html {
   font-family: 'Open Sans', 'helvetica', sans-serif;
   font-size: 15px;
-}
-
-h2 {
-  font-size: 26px;
-  margin-top: 0 !important;
-  text-align: center;
-  border-bottom: black 1px solid;
 }
 
 nav {
@@ -117,6 +111,10 @@ nav a:hover {
 
 nav > h1 > a:hover {
     background: none;
+}
+
+ol, ul {
+  padding: 0;
 }
 
 sup {
@@ -181,6 +179,11 @@ ____________________________________________________*/
   }
 }
 
+.entry-content {
+  margin: 25px 0 0;
+  text-align: justify;
+}
+
 .footnote {
   font-size: 12px;
 }
@@ -189,6 +192,10 @@ ____________________________________________________*/
 .highlight pre {
   font-size: 14px;
   overflow: scroll;
+}
+
+#latest {
+  padding: 20px 10px;
 }
 
 .list-bare{
@@ -214,6 +221,7 @@ ____________________________________________________*/
 
   #nav_list li {
     line-height: 35px;
+    margin: 0;
   }
 }
 
@@ -227,7 +235,7 @@ ____________________________________________________*/
   }
 
   .nav_link {
-    padding: 5px 15px;
+    padding: 5px 10px;
   }
 }
 
@@ -254,6 +262,71 @@ ____________________________________________________*/
   margin: 0 0 5px 0;
   padding: 0 5px;
 }
+
+.post_detail {
+  font-size: 2em;
+  line-height: 1em;
+}
+
+.post_list {
+  display: block;
+  list-style-type: none;
+}
+
+.post_list  li {
+  border: none;
+}
+
+.post_list ul {
+  margin: 15px 0;
+}
+
+.post_list li {
+  text-align: left;
+  padding-left: 0;
+  vertical-align: middle;
+  line-height: normal;
+}
+
+.post_list a {
+  display: inline-block;
+  text-align: left;
+}
+
+.post_list h2 {
+  border: none;
+  display: inline;
+}
+
+.post_title h3 {
+  margin: 0;
+}
+
+ul.tags:before {
+    content: "Tags:";
+    margin-right: 10px;
+    font-weight: bold !important;
+}
+
+ul.tags li {
+  padding: 0;
+  border: black 1px solid;
+  border-radius: 5px;
+}
+
+ul.tags a {
+  padding: 0 10px;
+  display: block;
+}
+
+ul.tags li:hover {
+  box-shadow: 0 0 1px 1px #190500;
+}
+
+ul.tags a:hover {
+  text-decoration: none;
+}
+
 
 /* Code
 –––––––––––––––––––––––––––––––––––––––––––––––––– */
@@ -295,13 +368,28 @@ td:last-child {
 /* Grid
 –––––––––––––––––––––––––––––––––––––––––––––––––– */
 .content {
-  position: relative;
-  width: 100%;
   max-width: 960px;
   margin: 0 auto;
   padding: 0 20px;
   box-sizing: border-box;
   line-height: 1.6;
+}
+
+.content h2 ,
+.content h1 {
+  text-align: center;
+  border-bottom: black 1px solid;
+}
+
+.content h2 a,
+.content h1 a{
+  text-decoration: none;
+  color: inherit;
+}
+
+.content h2 a:hover,
+.content h1 a:hover{
+  color: #8C1D01;
 }
 
 .content h3 {
@@ -319,7 +407,6 @@ td:last-child {
   text-transform: uppercase;
 }
 
-
 .column,
 .columns {
   width: 100%;
@@ -329,18 +416,25 @@ td:last-child {
 
 /* For devices larger than 400px */
 @media (min-width: 575px) {
-  .content {
+  .content,
+  footer {
     width: 85%;
-    padding: 0;
+    padding: 25px 0 0;
   }
 
   .content > * {
     margin: .333em auto;
   }
 
-  .content h2 {
-    padding-top: 15px;
+  .content h2,
+  .content h1,
+  h2.post_title.post_detail {
+    font-size: 26px;
     line-height: 1.25;
+    margin: 0;
+    padding-bottom: 5px;
+    text-align: center;
+    border-bottom: black 1px solid;
   }
 
   .content h3 {
@@ -358,7 +452,6 @@ td:last-child {
 
   .content li {
     display: inline-block;
-    padding: 0 10px;
     border-left: 1px solid #000;
     font-size: 14px;
     font-weight: 600;

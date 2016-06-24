@@ -19,6 +19,7 @@
   <link href='https://fonts.googleapis.com/css?family=Open+Sans:400,600,700' rel='stylesheet' type='text/css'>
   <!-- Style Meta Data -->
   <link rel="stylesheet" href="{{ SITEURL }}/theme/css/style.css" type="text/css" />
+    <link rel="stylesheet" href="{{ SITEURL }}/theme/css/blogs.css" type="text/css" />
   <link rel="stylesheet" href="{{ SITEURL }}/theme/css/pygments.css" type="text/css" />
 
 
@@ -42,7 +43,12 @@
   <nav>
     <h1 id = "author"> <a href="{{ SITEURL }}" id="home"> {{ AUTHOR }} </a> </h1>
     <ul id = "nav_list" class="list-bare">
-      {% if DISPLAY_PAGES_ON_MENU and PAGES %}
+      {% if articles %}
+        <li>
+          <a class="nav_link" href="{{ SITEURL }}/{{ POSTS_URL }}"> Blog </a>
+        </li>
+      {% endif %}
+      {% if PAGES %}
         {% for p in pages %}
           <li>
             <a class="nav_link" href="{{ SITEURL }}/{{ p.url }}">{{ p.title }}</a>

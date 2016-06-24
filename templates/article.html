@@ -13,9 +13,11 @@
 {% endblock head %}
 
 {% block content %}
-  <div class="all-posts">
-    <a href="{{ SITEURL }}/{{ POSTS_URL }}">&#11013; View all posts</a>
-  </div>
+  <div class = "content">
+
+    <div class="all-posts">
+      <a href="{{ SITEURL }}/{{ POSTS_URL }}">&#11013; View all posts</a>
+    </div>
 
     <article>
         <h2 class="post_title post_detail"><a href="{{ SITEURL }}/{{ article.url }}" rel="bookmark">{{ article.title }}</a></h2>
@@ -51,5 +53,7 @@
             </script>
         </div>
         {% endif %}
+        
     </article>
+  </div>
 {% endblock %}

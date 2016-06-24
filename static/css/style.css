@@ -282,10 +282,11 @@ ____________________________________________________*/
 }
 
 .post_list li {
-  text-align: left;
-  padding-left: 0;
-  vertical-align: middle;
-  line-height: normal;
+  text-align: left !important;
+  padding-left: 0 !important;
+  vertical-align: middle !important;
+  line-height: normal !important;
+  border-left: none !important;
 }
 
 .post_list a {
@@ -400,11 +401,21 @@ td:last-child {
   text-align: center;
 }
 
+.content.page p {
+  text-align: justify;
+}
+
+.content.page ul {
+  margin: 15px 0 25px;
+  padding-left: 20px;
+}
+
 .content li {
   padding: 0 10px;
   font-size: 14px;
   font-weight: 600;
   text-transform: uppercase;
+  display: inline-block;
 }
 
 .column,
@@ -446,16 +457,13 @@ td:last-child {
     text-align: left;
   }
 
-  .content > p {
+  .content.page p  {
     padding-left: 20px;
   }
 
-  .content li {
-    display: inline-block;
-    border-left: 1px solid #000;
-    font-size: 14px;
-    font-weight: 600;
-    text-transform: uppercase;
+  .content.page ul {
+    margin: 15px 0 25px;
+    padding-left: 40px;
   }
 
   .column,

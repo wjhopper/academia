@@ -13,52 +13,52 @@
 {% endblock head %}
 
 {% block content %}
-
- 	{% for page in hidden_pages %}
-		{% if page.slug is equalto 'home' %}
-			{{ page.content }}
-		{% endif %}
-	{% endfor %}
-
-
-	{% for page in pages %}
-		{% if loop.index is odd %}
-			<div class="row">
-		{% endif %}
-
-		<div class="one-half column page_listing">
-			<h3>
-				<a href="{{ SITEURL }}/{{ page.url }}">{{ page.title }}</a>
-			</h3>
-			<span> {{ page.summary }} </span>
-		</div>
-
-		{% if loop.index is even %}
-			</div>
-		{% endif %}
-
-	{% endfor %}
-
-{% if articles %}
-	<h2 id="latest">Latest Posts</h2>
-  <ul class="post_list list-bare" >
-  	{% for article in (articles_page.object_list if articles_page else articles) %}
-  	<li>
-      <ul>
-  		  <li class="post_title">
-          <h3><a href="{{ SITEURL }}/{{ article.url }}" rel="bookmark">{{ article.title }}</a></h3>
-        </li>
-  		  <li class="post_date">
-		      {{ article.locale_date }}
-        </li>
-      </ul>
-  	</li>
+  <div class = "content home">
+   	{% for page in hidden_pages %}
+  		{% if page.slug is equalto 'home' %}
+  			{{ page.content }}
+  		{% endif %}
   	{% endfor %}
-  </ul>
-{% endif %}
 
-{% if articles_page and articles_paginator.num_pages > 1 %}
-{% include 'pagination.html' %}
-{% endif %}
 
+  	{% for page in pages %}
+  		{% if loop.index is odd %}
+  			<div class="row">
+  		{% endif %}
+
+  		<div class="one-half column page_listing">
+  			<h3>
+  				<a href="{{ SITEURL }}/{{ page.url }}">{{ page.title }}</a>
+  			</h3>
+  			<span> {{ page.summary }} </span>
+  		</div>
+
+  		{% if loop.index is even %}
+  			</div>
+  		{% endif %}
+
+  	{% endfor %}
+
+    {% if articles %}
+    	<h2 id="latest">Latest Posts</h2>
+      <ul class="post_list list-bare" >
+      	{% for article in (articles_page.object_list if articles_page else articles) %}
+      	<li>
+          <ul>
+      		  <li class="post_title">
+              <h3><a href="{{ SITEURL }}/{{ article.url }}" rel="bookmark">{{ article.title }}</a></h3>
+            </li>
+      		  <li class="post_date">
+    		      {{ article.locale_date }}
+            </li>
+          </ul>
+      	</li>
+      	{% endfor %}
+      </ul>
+    {% endif %}
+
+    {% if articles_page and articles_paginator.num_pages > 1 %}
+    {% include 'pagination.html' %}
+    {% endif %}
+  </div>
 {% endblock content %}

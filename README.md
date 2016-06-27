@@ -39,6 +39,4 @@ If you don't have an existing Pelican project, see the [Pelican Quickstart](http
 
 5. To see your site and test out changes, start up the development web server by running `make devserver` in the directory where your Pelican site is set up, and navigate your web browser to http://localhost:8000
 
-If you are having trouble seeing/downloading the content of static files or other resources, try setting `RELATIVE_URLS = True` in your  `pelicanconf.py`.
-
 For information on publishing your site, read the [publishing docs](http://docs.getpelican.com/en/3.6.3/publish.html)

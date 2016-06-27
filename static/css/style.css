@@ -55,11 +55,12 @@ body {
 footer {
   padding: 1em;
   margin: 0 auto;
+  clear: both;
 }
 
 @media (min-width: 575px) {
   footer {
-    width: 85%;
+    width: 60%;
   }
 }
 
@@ -183,19 +184,17 @@ ____________________________________________________*/
   }
 }
 
-.content.home {
-  margin: 0 auto;
-}
-
 @media (min-width: 575px) {
   .content.home {
-    margin-left: 150px;
+    margin-left: 25%;
+    margin-right: 10%;
+    text-align: justify;
   }
 }
 
 @media (min-width: 750px) {
   .content.home {
-    margin-left: 200px;
+    max-width: 750px;
   }
 }
 
@@ -304,6 +303,10 @@ ____________________________________________________*/
   border: none;
 }
 
+.post_list > li {
+  display: block !important;
+}
+
 .post_list ul {
   margin: 15px 0 0;
 }
@@ -394,8 +397,7 @@ td:last-child {
 /* Grid
 –––––––––––––––––––––––––––––––––––––––––––––––––– */
 .content {
-  max-width: 960px;
-  margin: 0 12%;
+  margin: 0 auto;
   padding: 25px;
   box-sizing: border-box;
   line-height: 1.6;
@@ -463,6 +465,7 @@ h2.post_title.post_detail {
 @media (min-width: 575px) {
   .content {
     padding: 25px 40px;
+    margin: 0 12%;
   }
 
   .content > * {
@@ -544,6 +547,12 @@ h2.post_title.post_detail {
 
   .offset-by-one-half.column,
   .offset-by-one-half.columns     { margin-left: 52%; }
+}
+
+@media (min-width: 1000px) {
+  .content {
+    margin: 0 20%;
+  }
 }
 
 .row {

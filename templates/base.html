@@ -39,63 +39,35 @@
 
 <body>
   <!-- Site navigation list -->
-  <nav>
-    <h1 id = "author"> <a href="{{ SITEURL }}" id="home"> {{ AUTHOR }} </a> </h1>
-    <ul id = "nav_list" class="list-bare">
-      {% if articles %}
-        <li>
-          <a class="nav_link" href="{{ SITEURL }}/{{ POSTS_URL }}"> Blog </a>
-        </li>
-      {% endif %}
-      {% if PAGES %}
-        {% for p in pages %}
+  {% block navigation %}
+    <nav>
+      <h1 id = "author"> <a href="{{ SITEURL }}" id="home"> {{ AUTHOR }} </a> </h1>
+      <ul id = "nav_list" class="list-bare">
+        {% if articles %}
           <li>
-            <a class="nav_link" href="{{ SITEURL }}/{{ p.url }}">{{ p.title }}</a>
+            <a class="nav_link" href="{{ SITEURL }}/{{ POSTS_URL }}"> Blog </a>
           </li>
-        {% endfor %}
-      {% endif %}
-    </ul>
-  </nav>
-  <!-- Sidebar -->
-  <aside>
-    <h4> {{ SITESUBTITLE }} </h4>
-    <img id="avatar" src="{{ SITEURL }}/img/{{ AVATAR }}"></a>
-    {% if SIDEBAR_DIGEST %}
-      <p>{{ SIDEBAR_DIGEST }}</p>
-    {% endif %}
+        {% endif %}
+        {% if PAGES %}
+          {% for p in pages %}
+            <li>
+              <a class="nav_link" href="{{ SITEURL }}/{{ p.url }}">{{ p.title }}</a>
+            </li>
+          {% endfor %}
+        {% endif %}
+      </ul>
+    </nav>
+  {% endblock %}
 
-
-    {% if LINKS %}
-    <div id = "links">
-      {% for name, link in LINKS %}
-        <div class="button button-primary">
-          <a href="{{ link }}">
-            <img src="{{ SITEURL }}/theme/images/icons/{{ name|lower }}.png">
-            {{ name }}
-          </a>
-        </div>
-      {% endfor %}
-    </div>
-    {% endif %}
-
-    {% if FEED_ALL_ATOM %}
-    <a href="{{ SITEURL }}/{{ FEED_ALL_ATOM }}" rel="alternate">
-      <img src="{{ SITEURL }}/theme/images/icons/rss.png"></a>
-    {% endif %}
-    {% if FEED_ALL_RSS %}
-    <a href="{{ SITEURL }}/{{ FEED_ALL_RSS }}" rel="alternate">
-      <img src="{{ SITEURL }}/theme/images/icons/rss.png"></a>
-    {% endif %}
-
-  </aside>
+  {% block sidebar %}
+  {% endblock %}
   <!-- Content -->
   <div id = "container">
       {% block content %}
         <div class = "content"></div>
       {% endblock %}
 
-
-    <!-- Footer -->
+  <!-- Footer -->
     <footer>
       <p>
         Powered by <a href="http://getpelican.com/">Pelican</a>,

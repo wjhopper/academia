@@ -26,7 +26,7 @@
         </div>
 
         {% if article.tags %}
-          <ul class="tags">
+          <ul class="tags full_article_tags">
               {% for tag in article.tags %}
               <li><a href="{{ SITEURL }}/{{ tag.url }}">{{ tag }}</a></li>
               {% endfor %}
@@ -53,7 +53,7 @@
             </script>
         </div>
         {% endif %}
-        
+
     </article>
   </div>
 {% endblock %}

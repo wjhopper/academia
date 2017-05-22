@@ -73,7 +73,7 @@ footer > p {
 
 html {
   font-family: 'Open Sans', 'helvetica', sans-serif;
-  font-size: 15px;
+  font-size: 16px;
 }
 
 nav {
@@ -206,7 +206,9 @@ ____________________________________________________*/
 .entry-content.blog-post li{
   text-transform: none;
   display: list-item;
-  padding: .25em 1.5em;
+  padding: .25em .5em;
+  font-weight: inherit;
+  font-size: inherit;
 }
 
 .entry-content.blog-post ul{
@@ -214,7 +216,6 @@ ____________________________________________________*/
 }
 
 .entry-content.blog-post ul, .entry-content.blog-post ol{
-   list-style-position: inside;
    margin-left: 15px;
 }
 

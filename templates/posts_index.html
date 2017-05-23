@@ -1,9 +1,5 @@
 {% extends "base.html" %}
 
-{% block mixpanel_event %}
-mixpanel.track('View Blog Article List');
-{% endblock %}
-
 {% block content %}
   <div class = "content">
     {% for article in articles_page.object_list %}
@@ -25,5 +21,9 @@ mixpanel.track('View Blog Article List');
         {% endif %}
       </article>
     {% endfor %}
+
+    {% if articles_page and articles_paginator.num_pages > 1 %}
+        {% include 'pagination.html' %}
+    {% endif %}
   </div>
 {% endblock content %}

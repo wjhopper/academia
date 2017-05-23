@@ -130,6 +130,13 @@ sup {
 
 /* Classes and ID's
 ____________________________________________________*/
+#archive_link {
+    display: block;
+    margin: 15px auto 0;
+    text-align: center;
+    font-size: 18px;
+    text-decoration: underline;
+}
 
 #author {
   font-size: 22px;

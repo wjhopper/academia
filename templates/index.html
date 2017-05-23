@@ -60,10 +60,7 @@
       	</li>
       	{% endfor %}
       </ul>
-    {% endif %}
-
-    {% if articles_page and articles_paginator.num_pages > 1 %}
-    {% include 'pagination.html' %}
+      <a href="{{ SITEURL }}/archives.html" id="archive_link">Blog Post Archive</a>
     {% endif %}
   </div>
 {% endblock content %}

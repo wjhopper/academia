@@ -365,6 +365,11 @@ ____________________________________________________*/
   margin: 0;
 }
 
+#publications p, #presentations p {
+  padding-left: 50px;
+  text-indent: -50px;
+}
+
 .tags.full_article_tags {
   margin-top: 60px;
 }

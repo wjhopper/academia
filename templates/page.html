@@ -3,8 +3,8 @@
   {{ SITENAME }} | {{ page.title }}
 {% endblock %}
 {% block content %}
-  <div class = "content page">
+  <div id = "{{ page.slug }}" class = "content page">
     <h2> {{page.title }} </h2>
-    {{ page.content }}
+      {{ page.content }}
   </div>
 {% endblock %}

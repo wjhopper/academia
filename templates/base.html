@@ -48,7 +48,7 @@
             <a class="nav_link" href="{{ SITEURL }}/{{ POSTS_URL }}"> Blog </a>
           </li>
         {% endif %}
-        {% if PAGES %}
+        {% if pages %}
           {% for p in pages %}
             <li>
               <a class="nav_link" href="{{ SITEURL }}/{{ p.url }}">{{ p.title }}</a>

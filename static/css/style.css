@@ -207,7 +207,6 @@ ____________________________________________________*/
 
 .entry-content {
   margin: 25px 0 0;
-  text-align: justify;
 }
 
 .entry-content.blog-post li{
@@ -237,7 +236,8 @@ ____________________________________________________*/
 /* Applies to code blocks */
 .highlight pre {
   font-size: 14px;
-  overflow: scroll;
+  overflow-x: hidden;
+  padding: 5px;
 }
 
 #latest {
@@ -408,7 +408,7 @@ ul.tags a:hover {
 /* Code
 –––––––––––––––––––––––––––––––––––––––––––––––––– */
 code {
-  padding: .2rem .5rem;
+  padding: .2rem;
   margin: 0 .2rem;
   font-size: 90%;
   white-space: nowrap;

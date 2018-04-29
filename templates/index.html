@@ -26,24 +26,6 @@
     	{% endfor %}
     </div>
 
-  	{% for page in pages %}
-  		{% if loop.index is odd %}
-  			<div class="row">
-  		{% endif %}
-
-  		<div class="one-half column page_listing">
-  			<h3>
-  				<a href="{{ SITEURL }}/{{ page.url }}">{{ page.title }}</a>
-  			</h3>
-  			<span> {{ page.summary }} </span>
-  		</div>
-
-  		{% if loop.index is even %}
-  			</div>
-  		{% endif %}
-
-  	{% endfor %}
-
     {% if articles %}
     	<h2 id="latest">Latest Posts</h2>
       <ul class="post_list list-bare" >

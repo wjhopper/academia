@@ -8,6 +8,9 @@ a:hover {
   text-decoration: underline;
 }
 
+article p a {
+  font-weight: 600;
+}
 /* Sidebar */
 aside {
   text-align: center;
